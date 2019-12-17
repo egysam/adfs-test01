@@ -1,0 +1,27 @@
+<div *ngIf="person">
+    <form (ngSubmit)="save()" ngNativeValidate>
+        <h3>{{editName}}</h3>
+        <div>
+            <label>Id:</label> {{person.id}}
+        </div>
+        <div>
+            <label>Name:</label>
+            <input [(ngModel)]="editName" name="name" id="name" placeholder="name" required/>
+        </div>
+        <div>
+            <label>Phone:</label>
+            <input [(ngModel)]="editPhone" name="phone" id="phone" placeholder="Phone" />
+        </div>
+        <fieldset>
+            <legend>Address:</legend>
+            <address>
+        <input [(ngModel)]="editAddress.street" id="street" name="street"><br/>
+        <input [(ngModel)]="editAddress.city" id="city" name="city">,
+        <input [(ngModel)]="editAddress.state" id="state" name="state" size="2">
+        <input [(ngModel)]="editAddress.zip" id="zip" name="zip" size="5">
+      </address>
+        </fieldset>
+        <button type="submit" id="save">Save</button>
+        <button (click)="cancel()" id="cancel">Cancel</button>
+    </form>
+</div>

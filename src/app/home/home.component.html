@@ -1,0 +1,10 @@
+<div *ngIf="firstName">
+    <h2>Welcome, {{firstName + ' ' + lastName}}!</h2>
+    <h2>{{email}}</h2>
+    <button (click)="logout()">Logout</button>
+    <p><a routerLink="/search" routerLinkActive="active">Search</a></p>
+</div>
+
+<div *ngIf="!firstName">
+    <button (click)="login()">Login</button>
+</div>
